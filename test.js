@@ -4317,4 +4317,5 @@ describe('SmartCalculator', () => {
   
     assert.equal(value, 66);
   }); 
+  
 });

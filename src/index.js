@@ -1,3 +1,4 @@
+const evaluate = require('./evaluate.js');
 class SmartCalculator {
   constructor(initialValue) {
 	this.value = initialValue;
@@ -5,7 +6,7 @@ class SmartCalculator {
   }
   
  toString() {
-	 this.value = eval(this.str);
+	this.value = evaluate(this.str.match(/\d+|\+|-|\*|\/|\^/g));
     return this.value;
   }
 
@@ -20,7 +21,7 @@ class SmartCalculator {
   }
 
   multiply(number) {
-	  this.str += '*' + number;
+	this.str += '*' + number;
 	return this;
 	}
 
@@ -33,6 +34,6 @@ class SmartCalculator {
 	this.str += '^' + number;
 	return this;
   }
-}
+} 
 
 module.exports = SmartCalculator;
